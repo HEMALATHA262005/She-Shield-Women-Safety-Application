@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #D81B60;
+  /* Deep Magenta */
+  --primary-light: #F48FB1;
+  --primary-dark: #AD1457;
+  --secondary: #880E4F;
+  /* Dark Rose */
+  --accent: #E1BEE7;
+  --background: #FFF0F5;
+  /* Lavender Blush */
+  --surface: rgba(255, 255, 255, 0.85);
+  /* Glassmorphism */
+  --text-main: #212121;
+  --text-light: #757575;
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --danger: #F44336;
+
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px rgba(216, 27, 96, 0.15);
+  /* Pink shadow */
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --blur-md: blur(10px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFF0F5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #FFF0F5;
+  background-image: linear-gradient(rgba(255, 240, 245, 0.4), rgba(255, 240, 245, 0.4)), url('/home-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+.quotes-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-lg);
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  font-style: italic;
+  box-shadow: inset 0 0 20px rgba(216, 27, 96, 0.05);
+  /* Added subtle inner shadow for depth */
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.quote-author {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Base UI Elements */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* SOS Panic Button Specific */
+.btn-sos {
+  background: linear-gradient(135deg, #FF1744 0%, #D50000 100%);
+  color: white;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  box-shadow: 0 0 30px rgba(255, 23, 68, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 30px rgba(255, 23, 68, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 23, 68, 0);
+  }
+}
+
+/* Layout Utilities */
+.app-container {
+  flex: 1;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+/* Input Styles */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.input-field {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(216, 27, 96, 0.1);
+}
+
+/* Module Layouts */
+.module-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.module-title {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+}
+
+.module-subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulse-success {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.pulse-success {
+  animation: pulse-success 2s infinite;
+}
