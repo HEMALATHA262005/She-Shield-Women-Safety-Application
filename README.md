@@ -35,6 +35,6 @@ She-Shield aims to improve women's safety by providing instant emergency communi
 
 * SMS Alert Integration
 * Emergency Call Feature
-* Live Tracking Dashboard
+* Live Tracking Dashboard.
 * Mobile Application Support
 * AI-Based Safety Recommendations
